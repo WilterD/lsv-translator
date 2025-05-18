@@ -2,3 +2,6 @@ Flask
 flask-cors
 vosk
 pyaudio
+opencv-python
+mediapipe
+numpy
