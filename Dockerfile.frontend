@@ -1,13 +1,13 @@
-FROM python:3.10-slim
-WORKDIR /app
-COPY backend /app
-RUN apt-get update && apt-get install -y portaudio19-dev ffmpeg && \
-    pip install --no-cache-dir -r requirements.txt
-CMD ["python", "app.py"]
-
-# Dockerfile.frontend
 FROM node:18
+
 WORKDIR /app
-COPY frontend /app
-RUN npm install && npm run build
+
+COPY . /app
+
+# Eliminar posibles residuos
+RUN rm -rf node_modules package-lock.json
+
+# Instalar ignorando dependencias opcionales de Rollup
+RUN npm install --legacy-peer-deps --omit=optional
+
 CMD ["npm", "run", "dev"]

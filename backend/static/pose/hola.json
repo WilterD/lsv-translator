@@ -1,0 +1,47 @@
+{
+  "mixamorig7:LeftArm": [
+    0.5,
+    0.0,
+    0.2
+  ],
+  "mixamorig7:LeftForeArm": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "mixamorig7:LeftHand": [
+    0.2,
+    0.1,
+    0.0
+  ],
+  "mixamorig7:RightArm": [
+    -0.3,
+    0.0,
+    -0.2
+  ],
+  "mixamorig7:RightForeArm": [
+    -0.8,
+    0.0,
+    0.0
+  ],
+  "mixamorig7:RightHand": [
+    -0.2,
+    -0.1,
+    0.0
+  ],
+  "mixamorig7:Spine": [
+    0.1,
+    0.0,
+    0.0
+  ],
+  "mixamorig7:Neck": [
+    0.0,
+    0.0,
+    0.1
+  ],
+  "mixamorig7:Head": [
+    0.0,
+    0.0,
+    0.0
+  ]
+}

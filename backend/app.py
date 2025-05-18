@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_file
 from flask_cors import CORS
 from vosk import Model, KaldiRecognizer
 import pyaudio
@@ -6,6 +6,7 @@ import json
 import queue
 import threading
 from utils.translator import translate_text
+
 
 app = Flask(__name__)
 CORS(app)
@@ -36,6 +37,14 @@ def recognize_loop():
             text = result.get("text", "").strip()
             if text:
                 audio_queue.put(text)
+
+@app.route("/api/pose/<glosa>")
+def get_pose_for_glosa(glosa):
+    path = f"static/poses/{glosa.lower()}.json"
+    try:
+        return send_file(path, mimetype="application/json")
+    except:
+        return jsonify({"error": "Pose no encontrada"}), 404
 
 # Endpoint para obtener el texto reconocido y glosas
 @app.route("/api/get_text", methods=["GET"])
