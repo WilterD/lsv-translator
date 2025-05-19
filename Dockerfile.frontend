@@ -1,13 +1,18 @@
+# Dockerfile.frontend
 FROM node:18
 
+# Establece directorio de trabajo
 WORKDIR /app
 
-COPY . /app
+# Copia solo los archivos necesarios del frontend
+COPY frontend/package*.json ./
+COPY frontend/ ./
 
-# Eliminar posibles residuos
-RUN rm -rf node_modules package-lock.json
-
-# Instalar ignorando dependencias opcionales de Rollup
+# Instala dependencias (omit=optional evita errores con @rollup)
 RUN npm install --legacy-peer-deps --omit=optional
 
+# Exponer el puerto de Vite
+EXPOSE 5173
+
+# Corre el servidor de desarrollo
 CMD ["npm", "run", "dev"]

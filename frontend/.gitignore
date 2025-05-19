@@ -1,23 +1,86 @@
-node_modules
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
 
-# Output
-.output
-.vercel
-.netlify
-.wrangler
-/.svelte-kit
-/build
+# SvelteKit
+.svelte-kit/
+.build/
+.vite/
+.svelte-check-cache/
 
-# OS
+# Vite
+vite.config.ts.timestamp-*
+
+# Output directo de producción
+dist/
+build/
+.output/
+
+# Svelte static builds (por si usas adaptadores)
+.vercel/
+.netlify/
+.wrangler/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+venv/
+env/
+ENV/
+Pipfile.lock
+
+# Modelos de Vosk (evitar subir modelos pesados)
+backend/vosk_model/
+!backend/vosk_model/README  # Excluye el modelo pero conserva el README
+
+# Archivos de audio grabados o temporales (por si grabas)
+*.wav
+*.mp3
+*.ogg
+
+# Archivos ocultos del sistema
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Env
+# VSCode y editores comunes
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Entornos
 .env
 .env.*
 !.env.example
-!.env.test
 
-# Vite
-vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
+# Logs
+logs/
+*.log
+
+# Docker cache (si decides usarlo luego)
+**/.docker/
+.dockerignore
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.bak
+
+# Instalaciones personalizadas
+frontend/.npm/
+frontend/.npmrc
+
+# Archivos de configuración temporal
+*.timestamp-*
+
+backend/.env
+backend/venv/

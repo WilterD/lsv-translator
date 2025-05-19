@@ -7,7 +7,7 @@
   "@rollup/rollup-linux-x64-gnu": "0.0.0"
 },
 	"scripts": {
-		"postinstall": "rm -rf node_modules/rollup/dist/native.js",
+		"postinstall": "node ./remove-rollup-native.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",

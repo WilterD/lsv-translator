@@ -14,11 +14,10 @@ services:
 
   frontend:
     build:
-      context: ./frontend
-      dockerfile: ../Dockerfile.frontend
+      context: .
+      dockerfile: Dockerfile.frontend
     ports:
       - "5173:5173"
     volumes:
       - ./frontend:/app
     restart: always
-    command: ["npm", "run", "dev"]
